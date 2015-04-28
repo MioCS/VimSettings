@@ -15,6 +15,11 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 " Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-powerline' 
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/a.vim' 
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 Plugin 'Solarized'
@@ -45,14 +50,55 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " common set
+" display row number
 set nu
+" display status line
+set laststatus=2
+" display cursor
+set ruler
+" helight current row/column
+set cursorline
+set cursorcolumn
+" helight search result
+set hlsearch
+" indent settinga
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <Leader>p "+p
 
-" Solarize
-set background=dark
-colorscheme solarized
+" colorscheme
+set background=light
+colorscheme molokai
+" colorscheme solarized
 
 " vim-powerline plugin
-set laststatus=2
 set t_Co=256
 set encoding=utf8
 let g:Powerline_symbols = 'fancy'
+
+" a.vim plugin
+" switch between *.cpp & *.h
+nmap <Leader>ch :A<CR>
+" display in subWindows
+nmap <Leader>sch :AS<CR>
+
+" YCM settings 
+
+" NERDTree settings
+" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+nmap <Leader>fl :NERDTreeToggle<CR>
+" 设置NERDTree子窗口宽度
+let NERDTreeWinSize=32
+" 设置NERDTree子窗口位置
+let NERDTreeWinPos="left"
+" 显示隐藏文件
+let NERDTreeShowHidden=1
+" NERDTree 子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=1
+" 删除文件时自动删除文件对应 buffer
+let NERDTreeAutoDeleteBuffer=1
