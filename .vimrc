@@ -71,6 +71,8 @@ set softtabstop=4
 vnoremap <Leader>y "+y
 " paste 
 nmap <Leader>p "+p
+" makefile
+nmap <F5> :wa<CR>:make<CR><CR>:cw<CR>
 
 " colorscheme
 set background=light
