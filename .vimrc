@@ -22,7 +22,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
-Plugin 'Solarized'
 Plugin 'Tagbar'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -50,6 +49,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " common set
+" define <leader>
+let mapleader=";"
 " display row number
 set nu
 " display status line
@@ -66,15 +67,14 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-" 设置快捷键将选中文本块复制至系统剪贴板
+" copy
 vnoremap <Leader>y "+y
-" 设置快捷键将系统剪贴板内容粘贴至 vim
+" paste 
 nmap <Leader>p "+p
 
 " colorscheme
 set background=light
 colorscheme molokai
-" colorscheme solarized
 
 " vim-powerline plugin
 set t_Co=256
@@ -88,17 +88,35 @@ nmap <Leader>ch :A<CR>
 nmap <Leader>sch :AS<CR>
 
 " YCM settings 
+" completion in comments
+let g:ycm_complete_in_comments=1
+" allow vim load .ycm_extra_conf.py
+let g:ycm_confirm_extra_conf=0
+" start ycm tags completion engine
+let g:ycm_collect_identifiers_from_tags_files=1
+" add c++ stdlib tags
+set tags+=~/VimSettingsm/stdcpp.tags
+" OmniCppComplete
+inoremap <leader>; <C-x><C-o>
+" using list instead subWindows
+set completeopt-=preview
+" show completion list from first key words 
+let g:ycm_min_num_of_chars_for_completion=1
+" forbid cache match, always rebuilding
+let g:ycm_cache_omnifunc=0
+" syntax completion         
+let g:ycm_seed_identifiers_with_syntax=1
 
 " NERDTree settings
-" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+" Toggle NERDTree 
 nmap <Leader>fl :NERDTreeToggle<CR>
-" 设置NERDTree子窗口宽度
+" set NERDTree subWindows width
 let NERDTreeWinSize=32
-" 设置NERDTree子窗口位置
+" set NERDTree subWindows position
 let NERDTreeWinPos="left"
-" 显示隐藏文件
+" display hidden files
 let NERDTreeShowHidden=1
-" NERDTree 子窗口中不显示冗余帮助信息
+" no help in subWindows
 let NERDTreeMinimalUI=1
-" 删除文件时自动删除文件对应 buffer
+" delete file and corresponding buffer
 let NERDTreeAutoDeleteBuffer=1
