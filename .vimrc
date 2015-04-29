@@ -67,10 +67,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-" copy
-vnoremap <Leader>y "+y
-" paste 
-nmap <Leader>p "+p
 " makefile
 nmap <F5> :wa<CR>:make<CR><CR>:cw<CR>
 
@@ -97,7 +93,7 @@ let g:ycm_confirm_extra_conf=0
 " start ycm tags completion engine
 let g:ycm_collect_identifiers_from_tags_files=1
 " add c++ stdlib tags
-set tags+=~/VimSettingsm/stdcpp.tags
+set tags+=~/VimSettings/stdcpp.tags
 " OmniCppComplete
 inoremap <leader>; <C-x><C-o>
 " using list instead subWindows
