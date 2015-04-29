@@ -83,9 +83,9 @@ let g:Powerline_symbols = 'fancy'
 
 " a.vim plugin
 " switch between *.cpp & *.h
-nmap <Leader>ch :A<CR>
+nmap <Leader>h :A<CR>
 " display in subWindows
-nmap <Leader>sch :AS<CR>
+nmap <Leader>sh :AS<CR>
 
 " YCM settings 
 " completion in comments
@@ -109,7 +109,7 @@ let g:ycm_seed_identifiers_with_syntax=1
 
 " NERDTree settings
 " Toggle NERDTree 
-nmap <Leader>fl :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 " set NERDTree subWindows width
 let NERDTreeWinSize=32
 " set NERDTree subWindows position
